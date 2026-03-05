@@ -1,0 +1,715 @@
+$date
+	Thu Mar  5 12:23:18 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb $end
+$var wire 1 ! rst_busy $end
+$var wire 1 " prog_full $end
+$var wire 1 # half_full $end
+$var wire 1 $ half_empty $end
+$var wire 1 % full $end
+$var wire 1 & empty $end
+$var wire 8 ' data_out [7:0] $end
+$var wire 4 ( data_count [3:0] $end
+$var wire 1 ) almost_full $end
+$var wire 1 * almost_empty $end
+$var parameter 32 + DATA_WIDTH $end
+$var parameter 32 , DEPTH $end
+$var parameter 32 - PTR_WIDTH $end
+$var reg 1 . clk $end
+$var reg 8 / data_in [7:0] $end
+$var reg 1 0 mode $end
+$var reg 4 1 prog_empty_value [3:0] $end
+$var reg 4 2 prog_full_value [3:0] $end
+$var reg 1 3 r_en $end
+$var reg 1 4 rst $end
+$var reg 1 5 w_en $end
+$scope module DUT $end
+$var wire 1 . clk $end
+$var wire 8 6 data_in [7:0] $end
+$var wire 1 0 mode $end
+$var wire 4 7 prog_empty_value [3:0] $end
+$var wire 4 8 prog_full_value [3:0] $end
+$var wire 1 3 r_en $end
+$var wire 1 4 rst $end
+$var wire 1 5 w_en $end
+$var wire 3 9 w_addr [2:0] $end
+$var wire 1 ! rst_busy $end
+$var wire 3 : r_addr [2:0] $end
+$var wire 1 " prog_full $end
+$var wire 1 ; prog_empty $end
+$var wire 1 # half_full $end
+$var wire 1 $ half_empty $end
+$var wire 1 % full $end
+$var wire 1 & empty $end
+$var wire 1 ) almost_full $end
+$var wire 1 * almost_empty $end
+$var parameter 32 < DATA_WIDTH $end
+$var parameter 32 = DEPTH $end
+$var parameter 32 > PTR_WIDTH $end
+$var reg 4 ? data_count [3:0] $end
+$var reg 8 @ data_out [7:0] $end
+$var reg 1 A overflow $end
+$var reg 4 B r_ptr [3:0] $end
+$var reg 1 C rd_valid $end
+$var reg 1 D underflow $end
+$var reg 4 E w_ptr [3:0] $end
+$var reg 1 F wr_ack $end
+$upscope $end
+$scope task read_fifo $end
+$var integer 32 G i [31:0] $end
+$var integer 32 H num [31:0] $end
+$upscope $end
+$scope task simultaneous_rw $end
+$var integer 32 I i [31:0] $end
+$var integer 32 J num [31:0] $end
+$upscope $end
+$scope task write_fifo $end
+$var integer 32 K i [31:0] $end
+$var integer 32 L num [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b11 >
+b1000 =
+b1000 <
+b11 -
+b1000 ,
+b1000 +
+$end
+#0
+$dumpvars
+bx L
+bx K
+bx J
+bx I
+bx H
+bx G
+xF
+bx E
+xD
+xC
+bx B
+xA
+bx @
+bx ?
+x;
+bx :
+bx 9
+b11 8
+b101 7
+b0 6
+05
+04
+03
+b11 2
+b101 1
+10
+b0 /
+0.
+x*
+x)
+bx (
+bx '
+x&
+x%
+x$
+x#
+x"
+1!
+$end
+#5000
+1&
+0*
+1;
+0#
+0"
+0)
+1$
+0%
+b0 (
+b0 ?
+b0 9
+b0 :
+0F
+b0 E
+0C
+b0 '
+b0 @
+b0 B
+0A
+0D
+1.
+#10000
+0.
+#15000
+1.
+#20000
+0.
+#25000
+1.
+#30000
+0.
+#35000
+1.
+#40000
+0.
+#45000
+b0 K
+b1000 L
+0!
+14
+1.
+#50000
+0.
+#55000
+b1010 /
+b1010 6
+15
+b1 K
+1.
+#60000
+0.
+#65000
+0&
+1*
+b1 (
+b1 ?
+b1 9
+b1011 /
+b1011 6
+1F
+b1 E
+b10 K
+1.
+#70000
+0.
+#75000
+0*
+b10 (
+b10 ?
+b10 9
+b10 E
+1F
+b1100 /
+b1100 6
+b11 K
+1.
+#80000
+0.
+#85000
+1"
+b11 (
+b11 ?
+b11 9
+b1101 /
+b1101 6
+b11 E
+1F
+b100 K
+1.
+#90000
+0.
+#95000
+1#
+b100 (
+b100 ?
+b100 9
+b100 E
+1F
+b1110 /
+b1110 6
+b101 K
+1.
+#100000
+0.
+#105000
+0$
+b101 (
+b101 ?
+b101 9
+b1111 /
+b1111 6
+b101 E
+1F
+b110 K
+1.
+#110000
+0.
+#115000
+0;
+b110 (
+b110 ?
+b110 9
+b110 E
+1F
+b10000 /
+b10000 6
+b111 K
+1.
+#120000
+0.
+#125000
+1)
+b111 (
+b111 ?
+b111 9
+b10001 /
+b10001 6
+b111 E
+1F
+b1000 K
+1.
+#130000
+0.
+#135000
+1%
+b1000 (
+b1000 ?
+b0 9
+b1000 E
+1F
+05
+b0 G
+b1000 H
+1.
+#140000
+0.
+#145000
+0F
+13
+b1 G
+1.
+#150000
+0.
+#155000
+0%
+b111 (
+b111 ?
+b1 :
+1C
+b1 B
+b1010 '
+b1010 @
+b10 G
+1.
+#160000
+0.
+#165000
+0)
+b110 (
+b110 ?
+b10 :
+b10 B
+b1011 '
+b1011 @
+1C
+b11 G
+1.
+#170000
+0.
+#175000
+1;
+b101 (
+b101 ?
+b11 :
+b11 B
+b1100 '
+b1100 @
+1C
+b100 G
+1.
+#180000
+0.
+#185000
+1$
+b100 (
+b100 ?
+b100 :
+b100 B
+b1101 '
+b1101 @
+1C
+b101 G
+1.
+#190000
+0.
+#195000
+0#
+b11 (
+b11 ?
+b101 :
+b101 B
+b1110 '
+b1110 @
+1C
+b110 G
+1.
+#200000
+0.
+#205000
+0"
+b10 (
+b10 ?
+b110 :
+b110 B
+b1111 '
+b1111 @
+1C
+b111 G
+1.
+#210000
+0.
+#215000
+1*
+b1 (
+b1 ?
+b111 :
+b111 B
+b10000 '
+b10000 @
+1C
+b1000 G
+1.
+#220000
+0.
+#225000
+1&
+0*
+b0 (
+b0 ?
+b0 :
+b1000 B
+b10001 '
+b10001 @
+1C
+03
+b0 K
+b100 L
+1.
+#230000
+0.
+#235000
+0C
+b1010 /
+b1010 6
+15
+b1 K
+1.
+#240000
+0.
+#245000
+0&
+1*
+b1 (
+b1 ?
+b1 9
+b1011 /
+b1011 6
+1F
+b1001 E
+b10 K
+1.
+#250000
+0.
+#255000
+0*
+b10 (
+b10 ?
+b10 9
+b1010 E
+1F
+b1100 /
+b1100 6
+b11 K
+1.
+#260000
+0.
+#265000
+1"
+b11 (
+b11 ?
+b11 9
+b1101 /
+b1101 6
+b1011 E
+1F
+b100 K
+1.
+#270000
+0.
+#275000
+1#
+b100 (
+b100 ?
+b100 9
+b1100 E
+1F
+05
+1.
+#280000
+0.
+#285000
+0F
+1.
+#290000
+0.
+#295000
+b10010010 /
+b10010010 6
+13
+15
+1.
+b1 I
+b1000 J
+#300000
+0.
+#305000
+b101 9
+b1 :
+b1000000 /
+b1000000 6
+1F
+b1101 E
+1C
+b1001 B
+b1010 '
+b1010 @
+b10 I
+1.
+#310000
+0.
+#315000
+b10 :
+b110 9
+b1010 B
+b1011 '
+b1011 @
+1C
+b1110 E
+1F
+b100 /
+b100 6
+b11 I
+1.
+#320000
+0.
+#325000
+b111 9
+b11 :
+b110001 /
+b110001 6
+b1111 E
+1F
+b1011 B
+b1100 '
+b1100 @
+1C
+b100 I
+1.
+#330000
+0.
+#335000
+b100 :
+b0 9
+b1100 B
+b1101 '
+b1101 @
+1C
+b0 E
+1F
+b10000110 /
+b10000110 6
+b101 I
+1.
+#340000
+0.
+#345000
+b1 9
+b101 :
+b11000110 /
+b11000110 6
+b1 E
+1F
+b1101 B
+b10010010 '
+b10010010 @
+1C
+b110 I
+1.
+#350000
+0.
+#355000
+b110 :
+b10 9
+b1110 B
+b1000000 '
+b1000000 @
+1C
+b10 E
+1F
+b110010 /
+b110010 6
+b111 I
+1.
+#360000
+0.
+#365000
+b11 9
+b111 :
+b1001 /
+b1001 6
+b11 E
+1F
+b1111 B
+b100 '
+b100 @
+1C
+b1000 I
+1.
+#370000
+0.
+#375000
+b0 :
+b100 9
+b0 B
+b110001 '
+b110001 @
+1C
+b100 E
+1F
+03
+05
+b0 G
+1.
+#380000
+0.
+#385000
+0F
+0C
+13
+b1 G
+1.
+#390000
+0.
+#395000
+0#
+b11 (
+b11 ?
+b1 :
+1C
+b1 B
+b10000110 '
+b10000110 @
+b10 G
+1.
+#400000
+0.
+#405000
+0"
+b10 (
+b10 ?
+b10 :
+b10 B
+b11000110 '
+b11000110 @
+1C
+b11 G
+1.
+#410000
+0.
+#415000
+1*
+b1 (
+b1 ?
+b11 :
+b11 B
+b110010 '
+b110010 @
+1C
+b100 G
+1.
+#420000
+0.
+#425000
+1&
+0*
+b0 (
+b0 ?
+b100 :
+b100 B
+b1001 '
+b1001 @
+1C
+b101 G
+1.
+#430000
+0.
+#435000
+03
+1D
+0C
+b110 G
+1.
+#440000
+0.
+#445000
+0D
+b111 G
+1.
+#450000
+0.
+#455000
+b1000 G
+1.
+#460000
+0.
+#465000
+1.
+#470000
+0.
+#475000
+1.
+#480000
+0.
+#485000
+1.
+#490000
+0.
+#495000
+1.
+#500000
+0.
+#505000
+1.
+#510000
+0.
+#515000
+1.
+#520000
+0.
+#525000
+1.
+#530000
+0.
+#535000
+1.
+#540000
+0.
+#545000
+1.
+#550000
+0.
+#555000
+1.
+#560000
+0.
+#565000
+1.

@@ -76,7 +76,7 @@ endtask
 
 
 initial begin
-    $dumpfile("uart_loopback.vcd");
+    $dumpfile("dump.vcd");
     $dumpvars(0,tb);
 end
 

@@ -1,5 +1,4 @@
 `timescale 1ns/1ps
-`include "sync_fifo.v"
 
 module tb;
 
@@ -8,13 +7,13 @@ module tb;
   localparam PTR_WIDTH  = $clog2(DEPTH);
   localparam [PTR_WIDTH:0]PROG_EMPTY_VALUE = 5;
   localparam [PTR_WIDTH:0]PROG_FULL_VALUE = 3;
-
+  localparam MODE = 0; // 0 for FWFT, 1 for normal
+  
   reg clk;
   reg rst;
   reg r_en;
   reg w_en;
   reg [DATA_WIDTH-1:0] data_in;
-   reg mode = 0; // 0 for FWFT, 1 for normal
 
   wire [DATA_WIDTH-1:0] data_out;
   wire full;
@@ -36,13 +35,13 @@ module tb;
     .DATA_WIDTH(DATA_WIDTH),
     .DEPTH(DEPTH),
     .PROG_FULL_VALUE(PROG_FULL_VALUE),
-    .PROG_EMPTY_VALUE(PROG_EMPTY_VALUE)
+    .PROG_EMPTY_VALUE(PROG_EMPTY_VALUE),
+    .MODE(MODE)
   ) DUT (
     .clk(clk),
     .rst(rst),
     .r_en(r_en),
     .w_en(w_en),
-    .mode(mode),
     .data_in(data_in),
     .prog_full(prog_full),
     .data_out(data_out),

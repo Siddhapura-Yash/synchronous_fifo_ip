@@ -6,15 +6,15 @@ module tb;
   localparam DATA_WIDTH = 8;
   localparam DEPTH      = 8;
   localparam PTR_WIDTH  = $clog2(DEPTH);
+  localparam [PTR_WIDTH:0]PROG_EMPTY_VALUE = 5;
+  localparam [PTR_WIDTH:0]PROG_FULL_VALUE = 3;
 
   reg clk;
   reg rst;
   reg r_en;
   reg w_en;
   reg [DATA_WIDTH-1:0] data_in;
-  reg [PTR_WIDTH:0]prog_full_value = 3;
-   reg [PTR_WIDTH:0]prog_empty_value = 5;
-   reg mode = 1; // 0 for FWFT, 1 for normal
+   reg mode = 0; // 0 for FWFT, 1 for normal
 
   wire [DATA_WIDTH-1:0] data_out;
   wire full;
@@ -26,10 +26,17 @@ module tb;
   wire almost_empty;
   wire [$clog2(DEPTH+1)-1:0] data_count;
   wire prog_full;
+  wire prog_empty;
+  wire overflow;
+  wire underflow;
+  wire wr_ack;
+  wire rd_valid;
 
   sync_fifo #(
     .DATA_WIDTH(DATA_WIDTH),
-    .DEPTH(DEPTH)
+    .DEPTH(DEPTH),
+    .PROG_FULL_VALUE(PROG_FULL_VALUE),
+    .PROG_EMPTY_VALUE(PROG_EMPTY_VALUE)
   ) DUT (
     .clk(clk),
     .rst(rst),
@@ -37,8 +44,6 @@ module tb;
     .w_en(w_en),
     .mode(mode),
     .data_in(data_in),
-    .prog_full_value(prog_full_value),
-    .prog_empty_value(prog_empty_value),
     .prog_full(prog_full),
     .data_out(data_out),
     .full(full),
@@ -48,7 +53,12 @@ module tb;
     .half_empty(half_empty),
     .data_count(data_count),
     .almost_full(almost_full),
-    .almost_empty(almost_empty)
+    .almost_empty(almost_empty),
+    .overflow(overflow),
+    .underflow(underflow),
+    .wr_ack(wr_ack),
+    .rd_valid(rd_valid),
+    .prog_empty(prog_empty)
   );
 
   initial clk = 0;
